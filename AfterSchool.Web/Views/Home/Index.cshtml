@@ -1,0 +1,127 @@
+﻿@model IEnumerable<AfterSchool.Core.Club>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div id="headerwrap">
+    <div class="container">
+        <div class="row centered">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h1>LMES After School Programs</h1>
+                <h2>Fall 2014</h2>
+            </div>
+        </div><!-- row -->
+    </div><!-- container -->
+</div><!-- headerwrap -->
+
+
+<h2>Listing</h2>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descrption)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tuition)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DayOfWeekOffered)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaxEnrollment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CurrentEnrollment)
+            </th>
+            
+        </tr>
+        @foreach (var club in Model)
+{
+    <tr>
+        <td>@Html.ActionLink(@club.Name, "detail", "Club", new { @club.ID }, null)</td>
+
+        <td>
+            @Html.DisplayFor(modelItem => @club.Descrption)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => @club.Tuition)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => @club.DayOfWeekOffered)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => @club.MaxEnrollment)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => @club.CurrentEnrollment)
+        </td>
+    </tr>
+}
+    </table>
+
+
+@*
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descrption)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tuition)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DayOfWeekOffered)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaxEnrollment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CurrentEnrollment)
+            </th>
+            <th></th>
+        </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descrption)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tuition)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DayOfWeekOffered)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaxEnrollment)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CurrentEnrollment)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+                @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+            </td>
+        </tr>
+    }
+*@
+
+
+
+
+
+</table>
